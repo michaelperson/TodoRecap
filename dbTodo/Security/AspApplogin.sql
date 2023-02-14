@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [AspApplogin]
+    WITH PASSWORD = N'1bytsdg{au5k>iRdzgNqedUxmsFT7_&#$!~<6yRzdsdldzHK', SID = 0x05DE32304050604284A3873E3A7EBA19, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+
