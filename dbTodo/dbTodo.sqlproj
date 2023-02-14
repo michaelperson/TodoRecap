@@ -67,5 +67,6 @@
     <Build Include="Security\AspAppUser.sql" />
     <Build Include="Security\AspApplogin.sql" />
     <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
   </ItemGroup>
 </Project>

@@ -26,6 +26,7 @@ namespace TodoRecap.API.Controllers
             //mapper
             foreach (ToDoEntity item in mesTodo)
             {
+                 
                 if (!item.Done)
                 {
                     retour.Add(

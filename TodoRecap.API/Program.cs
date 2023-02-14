@@ -12,8 +12,14 @@ builder.Services.AddScoped<IRepository<ToDoEntity, int>>
     (
         (s) =>
         {
-           
             return new TodoRepository(cnstr);
+        }
+    );
+builder.Services.AddScoped<IRepository<UserEntity, int>>
+    (
+        (s) =>
+        {
+            return new UserRepository(cnstr);
         }
     );
 

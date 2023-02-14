@@ -35,7 +35,7 @@ namespace ConnectDB
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        listeDeToDo.Add(reader.MapEntity());
+                        listeDeToDo.Add(ToDoEntity.MapEntity(reader));
                     }
 
                     //4 - fermeture 
@@ -56,7 +56,25 @@ namespace ConnectDB
 
         public bool Create(ToDoEntity toInsert)
         {
-            throw new NotImplementedException();
+            SqlConnection con = new SqlConnection(_cnstr);
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = @"INSERT INTO [dbo].[Todo]
+           ([Title]
+           ,[Done])
+     VALUES
+           (@Title,@Done)";
+            cmd.Parameters.AddRange(toInsert.MapTable().ToArray());
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
         }
 
         public bool Update(ToDoEntity toUpdate)
